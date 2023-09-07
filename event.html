@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Abort Event Example</title>
+<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+	    <h1><span style="color: crimson">
+ABORT</span> AND <span style="color: green">CHANGE</span> EVENT</h1>
+	<div class="v">
+    <video height="500" width="500" id="myVideo" controls>
+        <source id="videoSource" src="danyel.mp4" type="video/mp4">
+
+    </video>
+    </div>
+    
+    <button onclick="abortVideoLoading()">Abort Loading</button>
+    <input type="file" id="videoInput" accept="video/*" onchange="changeVideoSource(this)">
+    
+    <script>
+ 
+        var videoElement = document.getElementById("myVideo");
+        var videoSourceElement = document.getElementById("videoSource");
+        
+        function abortVideoLoading() {
+            videoElement.load(); 
+            console.log("Video loading aborted.");
+        }
+        
+        function changeVideoSource(input) {
+            var selectedFile = input.files[0];
+            if (selectedFile) {
+                var objectURL = URL.createObjectURL(selectedFile);
+                videoSourceElement.src = objectURL;
+                videoElement.load(); 
+                console.log("Video source changed to: " + selectedFile.name);
+            }
+        }
+        
+      
+        videoElement.addEventListener("abort", function() {
+            console.log("Video loading was aborted.");
+        });
+    </script>
+</body>
+</html>

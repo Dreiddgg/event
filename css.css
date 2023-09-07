@@ -1,0 +1,40 @@
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-image: url("https://i.pinimg.com/originals/12/b2/3a/12b23a7752e8a7a4464c1ff5e596237f.gif");
+            background-size: cover;
+
+        }
+        h1 {
+            font-family: Franklin Gothic;
+            color: white;
+        }
+        video {
+            max-width: 100%;
+            border: 2px solid green;
+            border-radius: 20px;
+            box-shadow: 2px 2px 5px #888;
+            margin: 0 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: crimson;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input{
+            background-color:green;
+            border-radius: 20px;
+        }
+
+        .v{
+            position: absolute;
+            top: 20%;
+            left: 30%;
+        }
